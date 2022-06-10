@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'bed_yawing', 'bed_transfer', 'tool_horizontal_transfer', 'tool_vertical_transfer', 'tool_yawing', 'tool_pitching', ]

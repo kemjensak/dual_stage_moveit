@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="dual_stage_description">
+  <link
+    name="bed">
+    <inertial>
+      <origin
+        xyz="6.09040945453998E-09 7.27432608593759E-09 -0.00731360073835607"
+        rpy="0 0 0" />
+      <mass
+        value="0.284380025778967" />
+      <inertia
+        ixx="0.000773983570929925"
+        ixy="-6.27405833510982E-13"
+        ixz="-1.64019977303435E-12"
+        iyy="0.000773983570556424"
+        iyz="1.76498150934288E-12"
+        izz="0.00154719283819772" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/bed.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/bed.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="bed_pedestal">
+    <inertial>
+      <origin
+        xyz="-0.0897070911623583 3.86737863955489E-12 -0.0483442587915426"
+        rpy="0 0 0" />
+      <mass
+        value="0.950914700878344" />
+      <inertia
+        ixx="0.00224638005728345"
+        ixy="-9.24774979710021E-08"
+        ixz="-1.99947656216912E-07"
+        iyy="0.00329692106551918"
+        iyz="-5.38109524922457E-14"
+        izz="0.00541781622140962" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/bed_pedestal.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/bed_pedestal.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bed_yawing"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bed" />
+    <child
+      link="bed_pedestal" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="0.249736201182231 0.0154094911465468 0.143209988533338"
+        rpy="0 0 0" />
+      <mass
+        value="11.4566163845336" />
+      <inertia
+        ixx="0.440137783561479"
+        ixy="-2.37852579215089E-06"
+        ixz="7.57382536300556E-06"
+        iyy="0.868722966080528"
+        iyz="2.22713256895934E-06"
+        izz="1.2410445924492" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bed_transfer"
+    type="prismatic">
+    <origin
+      xyz="-0.175 0 -0.1733"
+      rpy="0 0 0" />
+    <parent
+      link="bed_pedestal" />
+    <child
+      link="base" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0.3"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="tool_horizontal_ts_link">
+    <inertial>
+      <origin
+        xyz="0.577807644030252 0.0263128793296435 0.0574129856591856"
+        rpy="0 0 0" />
+      <mass
+        value="0.337531620669527" />
+      <inertia
+        ixx="0.000361538622517226"
+        ixy="4.17355919022315E-07"
+        ixz="1.42582104286315E-06"
+        iyy="7.83906913105639E-05"
+        iyz="2.00465153005125E-06"
+        izz="0.000400186271796109" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool_horizontal_ts_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool_horizontal_ts_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tool_horizontal_transfer"
+    type="prismatic">
+    <origin
+      xyz="0.1815 -0.175 0.241"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="tool_horizontal_ts_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0.45"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="tool_vertical_ts_link">
+    <inertial>
+      <origin
+        xyz="-0.0552757900843764 0.335936195150674 -0.0455380606826554"
+        rpy="0 0 0" />
+      <mass
+        value="0.093839347535343" />
+      <inertia
+        ixx="2.45110011186769E-05"
+        ixy="-1.08199935364937E-07"
+        ixz="-3.37401667527307E-09"
+        iyy="6.0688742643268E-05"
+        iyz="2.14524157847651E-09"
+        izz="5.9986302477054E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool_vertical_ts_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool_vertical_ts_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tool_vertical_transfer"
+    type="prismatic">
+    <origin
+      xyz="0.578 0.511 0.083"
+      rpy="3.1416 0 0" />
+    <parent
+      link="tool_horizontal_ts_link" />
+    <child
+      link="tool_vertical_ts_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.15"
+      upper="0.15"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="tool_yaw_mount">
+    <inertial>
+      <origin
+        xyz="-8.37443685508532E-08 0.0552639402746598 0.145631377458447"
+        rpy="0 0 0" />
+      <mass
+        value="0.149368121250856" />
+      <inertia
+        ixx="0.000110258137457365"
+        ixy="1.07923805055878E-10"
+        ixz="4.75057903162315E-09"
+        iyy="6.85759441300537E-05"
+        iyz="-2.58790167556082E-05"
+        izz="6.79279114838378E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool_yaw_mount.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool_yaw_mount.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tool_yawing"
+    type="continuous">
+    <origin
+      xyz="-0.077 0.33597 -0.1145"
+      rpy="0 0 0" />
+    <parent
+      link="tool_vertical_ts_link" />
+    <child
+      link="tool_yaw_mount" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="tool">
+    <inertial>
+      <origin
+        xyz="0.000570950086942079 0.138961823918487 -1.17435555850864E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.526893341994097" />
+      <inertia
+        ixx="0.000127581224935012"
+        ixy="-1.12335014232223E-05"
+        ixz="-1.82456433276665E-09"
+        iyy="0.000126101829841225"
+        iyz="9.77382097854592E-09"
+        izz="0.000135780154009585" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_stage_description/meshes/tool.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tool_pitching"
+    type="continuous">
+    <origin
+      xyz="0 0.1415 0.178"
+      rpy="3.1416 0 0" />
+    <parent
+      link="tool_yaw_mount" />
+    <child
+      link="tool" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+</robot>

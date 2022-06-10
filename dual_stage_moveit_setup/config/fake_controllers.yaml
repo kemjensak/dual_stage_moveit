@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_tool_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - bed_yawing
+      - bed_transfer
+      - tool_horizontal_transfer
+      - tool_vertical_transfer
+      - tool_yawing
+      - tool_pitching
+initial:  # Define initial robot poses per group
+  - group: tool
+    pose: home

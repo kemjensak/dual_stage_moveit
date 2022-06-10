@@ -1,0 +1,40 @@
+tool_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - bed_yawing
+    - bed_transfer
+    - tool_horizontal_transfer
+    - tool_vertical_transfer
+    - tool_yawing
+    - tool_pitching
+  gains:
+    bed_yawing:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    bed_transfer:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    tool_horizontal_transfer:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    tool_vertical_transfer:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    tool_yawing:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    tool_pitching:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

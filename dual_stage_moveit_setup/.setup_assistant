@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: dual_stage_description
+    relative_path: urdf/dual_stage_description.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/dual_stage_description.srdf
+  CONFIG:
+    author_name: Jinseok Kim
+    author_email: kemjensak@gmail.com
+    generated_timestamp: 1653576604

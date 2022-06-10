@@ -1,0 +1,12 @@
+controller_list:
+  - name: tool_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - bed_yawing
+      - bed_transfer
+      - tool_horizontal_transfer
+      - tool_vertical_transfer
+      - tool_yawing
+      - tool_pitching
